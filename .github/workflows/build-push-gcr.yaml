@@ -22,4 +22,5 @@ jobs:
     
     - name: Image
       run: |-
-        docker build --build-arg -t "gcr.io/$PROJECT_ID/giphy-viewer:$GITHUB_SHA" .
+        docker build . --tag "gcr.io/$PROJECT_ID/giphy-viewer:latest" 
+        docker push "gcr.io/$PROJECT_ID/giphy-viewer:latest" 
