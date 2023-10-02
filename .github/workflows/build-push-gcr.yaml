@@ -22,4 +22,4 @@ jobs:
     
     - name: Image
       run: |-
-        docker build --build-arg -t gcr.io/$PROJECT_ID/giphy-viewer:$GITHUB_SHA .
+        docker build --build-arg -t "gcr.io/$PROJECT_ID/giphy-viewer:$GITHUB_SHA" .
