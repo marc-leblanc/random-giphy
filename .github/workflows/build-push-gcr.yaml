@@ -23,4 +23,4 @@ jobs:
     - name: Image
       run: |-
         docker build . --tag gcr.io/${{ secrets.PROJECT_ID }}/giphy-viewer:latest 
-        docker push gcr.io/${{ secrets.PROJECT_ID }}/giphy-viewer:latest
+        docker push pkg.dev/${{ secrets.PROJECT_ID }}/giphy-viewer:latest
