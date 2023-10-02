@@ -18,9 +18,9 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v1'
 
     - name: 'Use gcloud CLI'
-      run: 'gcloud info'
+      run: 'gcloud auth configure-docker us-central1-docker.pkg.dev'
     
     - name: Image
       run: |-
-        docker build . --tag pkg.dev/${{ secrets.PROJECT_ID }}/giphy-viewer:latest 
-        docker push pkg.dev/${{ secrets.PROJECT_ID }}/giphy-viewer:latest
+        docker build . --tag us-central1-docker.pkg.dev/${{ secrets.PROJECT_ID }}/giphy-viewer:latest 
+        docker push us-central1-docker.pkg.dev/${{ secrets.PROJECT_ID }}/giphy-viewer:latest
