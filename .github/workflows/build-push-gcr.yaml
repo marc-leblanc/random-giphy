@@ -9,12 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Set GCP Credentials
-      uses: google-github-actions/github-actions/setup-gcloud@v1.1.1
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v1'
       with:
-        service_account_key: ${{ secrets.GCR_DEVOPS_SERVICE_ACCOUNT_KEY }}
-        project_id: ${{ secrets.PROJECT_ID }}
-        export_default_credentials: true
+        credentials_json: '${{ secrets.GCR_DEVOPS_SERVICE_ACCOUNT_KEY }}'
+
+    - name: 'Set up Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v1'
+
+    - name: 'Use gcloud CLI'
+      run: 'gcloud info'
+    
     - name: Image
       run: |-
         docker build --build-arg -t gcr.io/$PROJECT_ID/giphy-viewer:$GITHUB_SHA .
