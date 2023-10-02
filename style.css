@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;  /* To ensure title is above container */
+    align-items: center;
+    justify-content: center;
+    background-color: #f5e7de;  /* A vintage paper color */
+    background-image: url('path/to/your/texture.png');  /* If you have a subtle leather or paper texture */
+    background-repeat: repeat;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);  /* Slightly transparent white for elegance */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+#giphyImage {
+    max-width: 100%;
+    height: auto;
+}
+
+.title {
+    font-family: 'Ranchers', cursive;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #2c3e50;  /* Darker shade for a polished look */
+}
