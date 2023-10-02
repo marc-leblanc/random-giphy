@@ -22,5 +22,5 @@ jobs:
     
     - name: Image
       run: |-
-        docker build . --tag us-central1-docker.pkg.dev/${{ secrets.PROJECT_ID }}/giphyviewer:latest 
+        docker build . --tag us-central1-docker.pkg.dev/${{ secrets.PROJECT_ID }}/giphyviewer/giphyviewer:latest 
         docker push us-central1-docker.pkg.dev/${{ secrets.PROJECT_ID }}/giphyviewer/giphyviewer:latest
